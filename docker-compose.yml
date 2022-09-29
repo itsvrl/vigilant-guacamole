@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  bridge:
+  uptime:
     external: true
   
 volumes:
@@ -17,7 +17,7 @@ services:
       - USER_GID=$USER_GID
     restart: always
     networks:
-      - bridge
+      - uptime
     volumes:
       - uptime_data:/app/data
     ports:
