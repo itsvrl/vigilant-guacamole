@@ -1,0 +1,4 @@
+# Exclude .env files from Github to protect
+.env
+*.env
+!example.env

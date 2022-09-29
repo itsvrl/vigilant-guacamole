@@ -1,0 +1,24 @@
+version: "3"
+
+networks:
+  uptime:
+    external: false
+  
+volumes:
+  uptime-s3:
+    driver: local
+
+services:
+  uptime:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    environment:
+      - USER_UID=$USER_UID
+      - USER_GID=$USER_GID
+    restart: always
+    networks:
+      - uptime
+    volumes:
+      - uptime-s3:/app/data
+    ports:
+      - "3001:3001"
