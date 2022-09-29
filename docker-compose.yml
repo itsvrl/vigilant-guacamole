@@ -1,11 +1,12 @@
 version: "3"
 
 networks:
-  uptime:
-    external: false
+  bridge:
+    external: true
   
 volumes:
-  uptime-s3:
+  uptime_data:
+    external: yes
     driver: local
 
 services:
@@ -17,8 +18,8 @@ services:
       - USER_GID=$USER_GID
     restart: always
     networks:
-      - uptime
+      - bridge
     volumes:
-      - uptime-s3:/app/data
+      - uptime_data:/app/data
     ports:
       - "3001:3001"
