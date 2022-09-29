@@ -7,7 +7,6 @@ networks:
 volumes:
   uptime_data:
     external: yes
-    driver: local
 
 services:
   uptime:
