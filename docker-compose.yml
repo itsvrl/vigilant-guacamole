@@ -2,7 +2,7 @@ version: "3"
 
 networks:
   uptime:
-    external: true
+    external: false
   
 volumes:
   uptime_data:
